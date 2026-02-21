@@ -1,0 +1,215 @@
+/* Root container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Header styling */
+header {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+header p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}
+
+/* Main layout */
+.main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: calc(100vh - 100px); /* fill screen minus header */
+  overflow: hidden;            /* prevent outer scroll */
+}
+
+/* Form section */
+.form {
+  flex: 1 1 30%; /* takes about 30% of space */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-height: min-content;
+  max-height: max-content;
+}
+.form h2 {
+  margin-bottom: 15px;
+}
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form label {
+  font-weight: bold;
+}
+.form div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form input,
+.form select,
+.form button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 170px;
+}
+.form input:focus,
+.form select:focus {
+  border-color: #2c3e50;
+  outline: none;
+}
+
+/* List section */
+.list {
+  flex: 1 1 70%; /* takes about 70% of space */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  overflow-y: auto; /* scroll internally if content exceeds */
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.list {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE/Edge legacy */
+}
+
+.list h3 {
+  margin-bottom: 15px;
+}
+
+/* Card container */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Individual card */
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.card-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Status badge */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+/* Update buttons with status colors */
+.update-btn {
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.update-btn.waiting {
+  background: #f39c12;
+}
+.update-btn.waiting:hover {
+  background: #d68910;
+}
+.update-btn.serving {
+  background: #27ae60;
+}
+.update-btn.serving:hover {
+  background: #1e8449;
+}
+.update-btn.completed {
+  background: #2980b9;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Remove button */
+.remove-btn {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.remove-btn:hover {
+  background: #c0392b;
+}
+
+/* Empty list text */
+.empty-text {
+  color: #888;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+  .form, .list {
+    flex: 1 1 100%; /* stack vertically on small screens */
+  }
+}

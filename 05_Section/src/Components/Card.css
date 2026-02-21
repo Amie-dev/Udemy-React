@@ -1,0 +1,115 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-info p {
+  margin: 0px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+.card-info span {
+  font-size: 9px;
+}
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.update-btn {
+  background: #3498db;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.update-btn:hover {
+  background: #2980b9;
+}
+
+.remove-btn {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+
+.empty-text {
+  color: #888;
+  text-align: center;
+  font-style: italic;
+}
+
+.update-btn {
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Different colors for each status */
+.update-btn.waiting {
+  background: #f39c12; /* orange */
+}
+.update-btn.waiting:hover {
+  background: #d68910;
+}
+
+.update-btn.serving {
+  background: #27ae60; /* green */
+}
+.update-btn.serving:hover {
+  background: #1e8449;
+}
+
+.update-btn.completed {
+  background: #2980b9; /* blue */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
